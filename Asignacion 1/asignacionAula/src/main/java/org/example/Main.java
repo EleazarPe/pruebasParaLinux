@@ -16,7 +16,7 @@ public class Main {
                 staticFileConfig.location = Location.CLASSPATH;
                 staticFileConfig.precompress=false;
                 staticFileConfig.aliasCheck=null;
-            });}).start(7070);
+            });}).start(7000);
         new InterceptarRequest(app).aplicarRutas();
 
         app.error(404, ctx -> {
