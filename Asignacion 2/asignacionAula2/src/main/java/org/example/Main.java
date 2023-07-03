@@ -19,7 +19,7 @@ public class Main {
                 staticFileConfig.location = Location.CLASSPATH;
                 staticFileConfig.precompress=false;
                 staticFileConfig.aliasCheck=null;
-            });}).start(7070);
+            });}).start(7001);
 
 
         new CrudTradicionalControlador(app).aplicarRutas();
