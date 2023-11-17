@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="/templates/manejadorUsuarios/plantilla.html::head">
+        <title th:text="${titulo}">...</title>
+    </head>
+    <body>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-4" th:text="${titulo}">....</h1>
+        </div>
+
+        <!-- El endpoint que estará procesando el formulario será enviado por el controlador      -->
+        <form enctype="application/x-www-form-urlencoded" method="post" th:attr="action=${accion}" >
+            <div class="form-group">
+                <label for="username">UserName</label>
+                <!-- La variable visualizar aplica el formulario readonly.                -->
+                <input th:readonly="${visualizar}" th:value="${username} ? ${usuario.username} : ''" type="text" name="username" class="form-control" id="username" aria-describedby="username">
+            </div>
+
+            <div class="form-group">
+                <label for="user">Name</label>
+                <input th:readonly="${visualizar}" th:value="${usuario} ? ${usuario.nombre} : ''" type="text"  name="user" class="form-control" id="user">
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input th:readonly="${visualizar}" th:value="${estudiante} ? ${usuario.password} : ''" type="text"  name="password" class="form-control" id="password">
+            </div>
+            <!-- Los botones para la creación del estudiante -->
+            <button th:if="${!visualizar}" type="submit" class="btn btn-primary">Crear</button>
+            <a href="/crud-simple/" class="btn btn-primary">Cancelar</a>
+        </form>
+    </div>
+
+        <!-- incluyendo la parte de javascript del template.        -->
+        <div th:replace="/templates/manejadorUsuarios/plantilla.html::javascript">
+
+        </div>
+
+    </body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head th:replace="/templates/manejadorUsuarios/plantilla.html::head">
+    <head>
+        <title th:text="${titulo}">Listar</title>
+    </head>
+    <body>
+
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-4" th:text="${titulo}">....</h1>
+            <p class="lead">Listado de los usuarios actuales</p>
+        </div>
+
+        <a href="/manejadorUsuarios/crear" class="btn btn-primary">Nuevo usuario</a>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Username</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Password</th>
+                <th scope="col">Administrador</th>
+                <th scope="col">autor</th>
+                <th scope="col">Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="usuario : ${lista}">
+                <th scope="row">
+                    <a th:text="${usuario.id}" th:href="'visualizar/'+${usuario.id}"/>
+                </th>
+                <td th:text="${usuario.username}">UserName</td>
+                <td th:text="${usuario.nombre}">Nombre</td>
+                <td th:text="${usuario.password}">Password</td>
+                <td th:text="${usuario.administrador}">Administrador</td>
+                <td th:text="${usuario.autor}">Autor</td>
+                <td>
+                    <a th:text="Editar" th:href="'editar/'+${usuario.username}" th class="btn btn-secondary btn-sm"/> |
+                    <a th:text="Eliminar" th:href="'eliminar/'+${usuario.id}" th class="btn btn-danger btn-sm"/>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+        <!-- incluyendo la parte de javascript del template.        -->
+        <div th:replace="/templates/manejadorUsuarios/plantilla.html::javascript">
+
+        </div>
+
+    </body>
+
+</html>

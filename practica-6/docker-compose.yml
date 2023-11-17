@@ -1,0 +1,85 @@
+services:
+
+  db:
+    image: oscarfonts/h2
+    container_name: db
+    ports:
+      - "9092:9092"
+    volumes:
+      - h2-data:/h2-data
+    environment:
+      H2_OPTIONS: "-tcp -tcpAllowOthers -tcpPort 9092 -ifNotExists"
+    networks:
+      - red-mocky
+
+  app1:
+    image: migueljosenoboa/web.avanzada:practica-4
+    container_name: app1
+    ports:
+      - "8081:8080"
+    environment:
+      DB_HOST: db
+      DB_PORT: 9092
+      DB_NAME: test
+      DB_USERNAME: "sa"
+      DB_PASSWORD: ""
+      PORT: 8081
+    networks:
+      - red-mocky
+    depends_on:
+      - db
+
+  app2:
+    image: migueljosenoboa/web.avanzada:practica-4
+    container_name: app2
+    ports:
+      - "8082:8080"
+    environment:
+      DB_HOST: db
+      DB_PORT: 9092
+      DB_NAME: test
+      DB_USERNAME: "sa"
+      DB_PASSWORD: ""
+      PORT: 8082
+    networks:
+      - red-mocky
+    depends_on:
+      - db
+
+  app3:
+    image: migueljosenoboa/web.avanzada:practica-4
+    container_name: app3
+    ports:
+      - "8083:8080"
+    environment:
+      DB_HOST: db
+      DB_PORT: 9092
+      DB_NAME: test
+      DB_USERNAME: "sa"
+      DB_PASSWORD: ""
+      PORT: 8083
+    networks:
+      - red-mocky
+    depends_on:
+      - db
+
+  haproxy:
+    image: haproxy
+    container_name: haproxy
+    ports:
+      - "80:80"
+    volumes:
+      - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg
+    depends_on:
+      - app1
+      - app2
+      - app3
+    networks:
+      - red-mocky
+
+networks:
+  red-mocky:
+
+volumes:
+  h2-data:
+

@@ -1,0 +1,36 @@
+Index: ../../Asignacion 3/AsignacionAula3/src/main/java/org/example/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package org.example;\r\n\r\nimport io.javalin.Javalin;\r\nimport io.javalin.http.staticfiles.Location;\r\nimport org.example.controladores.CrudTradicionalControlador;\r\nimport org.example.servicios.BootStrapServices;\r\nimport org.example.servicios.DataBaseServices;\r\n\r\nimport java.sql.SQLException;\r\n\r\npublic class Main {\r\n    public static void main(String[] args) throws SQLException {\r\n        var app = Javalin.create(config ->{\r\n            //configurando los documentos estaticos.\r\n            config.staticFiles.add(staticFileConfig -> {\r\n                staticFileConfig.hostedPath = \"/\";\r\n                staticFileConfig.directory = \"/publico\";\r\n                staticFileConfig.location = Location.CLASSPATH;\r\n                staticFileConfig.precompress=false;\r\n                staticFileConfig.aliasCheck=null;\r\n            });}).start(7070);\r\n\r\n\r\n        new CrudTradicionalControlador(app).aplicarRutas();\r\n\r\n        //Iniciando el servicio\r\n        BootStrapServices.getInstancia().init();\r\n\r\n        //Prueba de Conexión.\r\n       DataBaseServices.getInstancia().testConexion();\r\n\r\n        //\r\n       // EstudianteServices estudianteServices = new EstudianteServices();\r\n\r\n    }\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../Asignacion 3/AsignacionAula3/src/main/java/org/example/Main.java b/../../Asignacion 3/AsignacionAula3/src/main/java/org/example/Main.java
+--- a/../../Asignacion 3/AsignacionAula3/src/main/java/org/example/Main.java	
++++ b/../../Asignacion 3/AsignacionAula3/src/main/java/org/example/Main.java	
+@@ -20,7 +20,7 @@
+                 staticFileConfig.aliasCheck=null;
+             });}).start(7070);
+ 
+-
++        //cambiando algo
+         new CrudTradicionalControlador(app).aplicarRutas();
+ 
+         //Iniciando el servicio
+Index: ../../Asignacion 2/asignacionAula2/.idea/gradle.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"GradleSettings\">\r\n    <option name=\"linkedExternalProjectsSettings\">\r\n      <GradleProjectSettings>\r\n        <option name=\"externalProjectPath\" value=\"$PROJECT_DIR$\" />\r\n        <option name=\"gradleHome\" value=\"$PROJECT_DIR$/../../../../../../gradle/gradle-8.1.1\" />\r\n        <option name=\"modules\">\r\n          <set>\r\n            <option value=\"$PROJECT_DIR$\" />\r\n          </set>\r\n        </option>\r\n      </GradleProjectSettings>\r\n    </option>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../../Asignacion 2/asignacionAula2/.idea/gradle.xml b/../../Asignacion 2/asignacionAula2/.idea/gradle.xml
+--- a/../../Asignacion 2/asignacionAula2/.idea/gradle.xml	
++++ b/../../Asignacion 2/asignacionAula2/.idea/gradle.xml	
+@@ -1,5 +1,6 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
++  <component name="GradleMigrationSettings" migrationVersion="1" />
+   <component name="GradleSettings">
+     <option name="linkedExternalProjectsSettings">
+       <GradleProjectSettings>

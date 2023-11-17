@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0196ff28-8499-4ecc-99fd-8c057bd665d3" name="Changes" comment="Terminada la configuarcion y funcionamiento. Falta rest y fotos">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/encapsulaciones/Foto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/servicios/FotoServices.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/Fotos/listar.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/Fotos/visualizar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/controladores/InterceptarRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/controladores/InterceptarRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/encapsulaciones/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/encapsulaciones/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/servicios/GestionDb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/servicios/GestionDb.java" afterDir="false" />
+    </list>
+    <list id="e94aa795-2baa-4135-b756-4853f58d63e7" name="CambiosP3" comment="CambiosP3" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="practica3" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="practica3" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="practica3" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="application" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/../.." value="Carlos" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="2RAlTrQfX1YMxP0aBYQXycQksVJ" />
+  <component name="ProjectLevelVcsManager">
+    <OptionsSetting value="false" id="Update" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/eleaz/git/ICC322-Envios-1014_0884/Practica_3/practica3/src/main/resources/templates/Fotos",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "ChangesTree.GroupingKeys": [
+      "directory",
+      "module"
+    ],
+    "DatabaseDriversLRU": [
+      "h2"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\eleaz\git\ICC322-Envios-1014_0884\Practica_3\practica3\src\main\resources\templates\Fotos" />
+      <recent name="C:\Users\eleaz\git\ICC322-Envios-1014_0884\Practica_3\practica3\src\main\resources\META-INF" />
+      <recent name="C:\Users\eleaz\git\ICC322-Envios-1014_0884\Practica_3\practica3\src\main\resources" />
+      <recent name="C:\Users\eleaz\git\ICC322-Envios-1014_0884\Practica_3\practica3\src\main\java\org\example" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.example.servicios" />
+      <recent name="org.example.encapsulaciones" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="practica3 [run]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="run" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <ForceTestExec>false</ForceTestExec>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.practica3 [run]" />
+        <item itemvalue="Gradle.practica3 [run]" />
+        <item itemvalue="Gradle.practica3 [run]" />
+        <item itemvalue="Gradle.practica3 [run]" />
+        <item itemvalue="Gradle.practica3 [run]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0196ff28-8499-4ecc-99fd-8c057bd665d3" name="Changes" comment="" />
+      <changelist id="e94aa795-2baa-4135-b756-4853f58d63e7" name="CambiosP3" comment="" />
+      <created>1686700780275</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1686700780275</updated>
+      <workItem from="1686700781404" duration="387000" />
+      <workItem from="1686869742278" duration="1883000" />
+      <workItem from="1686871640261" duration="1258000" />
+      <workItem from="1686887625571" duration="58659000" />
+      <workItem from="1687464619130" duration="20788000" />
+    </task>
+    <task id="LOCAL-00001" summary="CambiosP3">
+      <created>1686870028956</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1686870028956</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Subiendo for">
+      <created>1686870828499</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1686870828499</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Creando otra prueba 12.16">
+      <created>1686889023528</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1686889023528</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Pasando a ORM el modelo de clases">
+      <created>1687025987036</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1687025987036</updated>
+    </task>
+    <task id="LOCAL-00005" summary="comenatario de prueba">
+      <created>1687026119444</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1687026119444</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Subiendo la parte de articulos, la gestion y ya se puede validar usuario en el servidor.">
+      <created>1687116204729</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1687116204729</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Muchos cambios, pocos resultados, no se puede extraer de una List los valores por ORM">
+      <created>1687140067083</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1687140067083</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Las Etiquetas estan listas.">
+      <created>1687219407321</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1687219407321</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Ya tenemos la paginacion de articulos.">
+      <created>1687228885939</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1687228885939</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Las etiquetas ya se pueden acceder. Todavia falta la parte de los post y los comentarios.">
+      <created>1687234047430</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1687234047430</updated>
+    </task>
+    <task id="LOCAL-00011" summary="las cookies puestas">
+      <created>1687490266950</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1687490266950</updated>
+    </task>
+    <task id="LOCAL-00012" summary="comentarios, articulos y login.">
+      <created>1687494538338</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1687494538338</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Terminada la configuarcion y funcionamiento. Falta rest y fotos">
+      <created>1687535238792</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1687535238792</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="RECENT_FILTERS">
+      <map>
+        <entry key="User">
+          <value>
+            <list>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
+                  <option value="*" />
+                </option>
+              </RecentGroup>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="TAB_STATES">
+      <map>
+        <entry key="8332194a-ef54-4f9d-a4b2-923b6ef2a33f">
+          <value>
+            <State />
+          </value>
+        </entry>
+        <entry key="903dc9f5-25ff-4e80-b954-8c3909410feb">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="range">
+                    <value>
+                      <list>
+                        <option value="origin/Carlos..main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+        <entry key="917d6c58-2e3c-4247-bd80-639d41f466f5">
+          <value>
+            <State />
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="date">
+                    <value>
+                      <list>
+                        <option value="1686266319829" />
+                        <option value="" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+        <entry key="be2c94fc-574d-4e6f-b30e-c0b35304ea88">
+          <value>
+            <State />
+          </value>
+        </entry>
+        <entry key="db82fd19-a4e6-4210-a28b-333823e74f22">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="CambiosP3" />
+    <MESSAGE value="Subiendo for" />
+    <MESSAGE value="Creando otra prueba 12.16" />
+    <MESSAGE value="Pasando a ORM el modelo de clases" />
+    <MESSAGE value="comenatario de prueba" />
+    <MESSAGE value="Subiendo la parte de articulos, la gestion y ya se puede validar usuario en el servidor." />
+    <MESSAGE value="Muchos cambios, pocos resultados, no se puede extraer de una List los valores por ORM" />
+    <MESSAGE value="Las Etiquetas estan listas." />
+    <MESSAGE value="Ya tenemos la paginacion de articulos." />
+    <MESSAGE value="Las etiquetas ya se pueden acceder. Todavia falta la parte de los post y los comentarios." />
+    <MESSAGE value="las cookies puestas" />
+    <MESSAGE value="comentarios, articulos y login." />
+    <MESSAGE value="Terminada la configuarcion y funcionamiento. Falta rest y fotos" />
+    <option name="LAST_COMMIT_MESSAGE" value="Terminada la configuarcion y funcionamiento. Falta rest y fotos" />
+  </component>
+</project>

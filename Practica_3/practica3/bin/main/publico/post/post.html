@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Post - BestBlog</title>
+    <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;display=swap">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css">
+</head>
+
+<body>
+<nav class="navbar navbar-light navbar-expand-lg fixed-top" id="mainNav">
+    <div class="container"><a class="navbar-brand" href="/">BestBlogU</a>
+        <div class="collapse navbar-collapse text-center align-items-center" id="navbarResponsive">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <!--<li class="nav-item"><a class="nav-link" href="../about.html">About us</a></li>
+                <li class="nav-item"><a class="nav-link" href="../contact.html">Contact us</a></li>-->
+                <li class="nav-item"></li>
+            </ul><button class="btn btn-primary" type="button" style="background: rgba(0,0,0,0.54);border-radius: 30px;border-color: rgba(7,7,7,0.17);" th:text="${tipo}" th:data-url="${sitio}" onclick="redirectToUrl(this)">LogIn</button>
+            <script th:inline="javascript">
+                function redirectToUrl(button) {
+                    var url = button.getAttribute('data-url');
+                    window.location.href = url;
+                }
+            </script></div><a href="../contact.html"></a><button data-bs-target="#navbarResponsive" data-bs-toggle="collapse"
+                                                                 class="navbar-toggler" aria-controls="navbarResponsive" aria-expanded="false"
+                                                                 aria-label="Toggle navigation"><i class="fa fa-bars"></i></button>
+    </div>
+</nav>
+<header class="masthead" style="background-image: url('../assets/img/fondopost.jpg');">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-lg-8 mx-auto position-relative">
+                <div class="post-heading">
+                    <h1 th:text="${titulo}">Titulo</h1>
+                    <span class="meta">Posted by&nbsp;<a th:text="${autor}">Start Bootstrap</a>&nbsp;<a th:text="${fecha}">on August 24, 2018</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<article>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-lg-8 mx-auto">
+                <p th:text="${cuerpo}">Cuerpo</p>
+            </div>
+        </div>
+    </div>
+</article>
+<section style="background-color: #eee;">
+    <div class="container my-5 py-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-12 col-lg-10 col-xl-8">
+                <div class="card">
+                    <div class="card-body" th:each="comentario : ${lista}">
+                        <div class="d-flex flex-start align-items-center">
+                            <img class="rounded-circle shadow-1-strong me-3"
+                                 th:src="@{'data:'+${comentario.getfotoMimebyId(comentario.autor.getFotoPerfil())}+';base64,'+${comentario.getfotobyId(comentario.autor.getFotoPerfil())}}" alt="avatar" width="60"
+                                 height="60" />
+                            <div>
+                                <h6 class="fw-bold text-primary mb-1" th:text="${comentario.autor.getUsername()}"></h6>
+                                <p class="text-muted small mb-0" th:text="${comentario.fechaFormateada()}">
+                                </p>
+                            </div>
+                        </div>
+
+                        <p class="mt-3 mb-4 pb-2" th:text="${comentario.getComentario()}">
+
+                        </p>
+
+                        <div class="small d-flex justify-content-start">
+                            <a href="#!" class="d-flex align-items-center me-3">
+                                <i class="far fa-thumbs-up me-2"></i>
+                                <p class="mb-0">Like</p>
+                            </a>
+                            <a href="#!" class="d-flex align-items-center me-3">
+                                <i class="far fa-comment-dots me-2"></i>
+                                <p class="mb-0">Comment</p>
+                            </a>
+                            <a href="#!" class="d-flex align-items-center me-3">
+                                <i class="fas fa-share me-2"></i>
+                                <p class="mb-0">Share</p>
+                            </a>
+                        </div>
+                        <hr style="border: 1px dashed grey; height: 0;">
+                    </div>
+                    <hr>
+                    <div th:if="${condicion == true}" class="card-footer py-3 border-0" style="background-color: #f8f9fa;">
+                        <form method="post" action="" id="miFormulario">
+                            <div class="d-flex flex-start w-100">
+                                <img class="rounded-circle shadow-1-strong me-3"
+                                     th:src="@{'data:'+${mimefoto}+';base64,'+${fotouser}}"
+                                     alt="avatar" width="40"
+                                     height="40" />
+                                <div class="form-outline w-100">
+                                    <textarea placeholder="New comment..." class="form-control" id="miTextarea" rows="4"
+                                    style="background: #fff;"></textarea>
+                                    <input type="hidden" name="texto" id="texto">
+
+                                    <label class="form-label" for="miTextarea">Message</label>
+                                </div>
+                            </div>
+                            <div class="float-end mt-2 pt-1">
+                                <button type="submit" class="btn btn-primary btn-sm">Post comment</button>
+                                <button type="button" onclick="borrarTextarea()" class="btn btn-outline-primary btn-sm">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-lg-8 mx-auto">
+                <ul class="list-inline text-center">
+                    <li class="list-inline-item"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x fa-inverse"></i></span></li>
+                    <li class="list-inline-item"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x fa-inverse"></i></span></li>
+                    <li class="list-inline-item"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-github fa-stack-1x fa-inverse"></i></span></li>
+                </ul>
+                <p class="text-muted copyright">Copyright&nbsp;©&nbsp;BestBlog 2023</p>
+            </div>
+        </div>
+    </div>
+</footer>
+<script src="../assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="../assets/js/clean-blog.js"></script>
+</body>
+<script>
+    var textarea = document.getElementById('miTextarea');
+    var contenidoOculto = document.getElementById('texto');
+
+    // Capturar el contenido del textarea y asignarlo al campo oculto antes de enviar el formulario
+    document.querySelector('form').addEventListener('submit', function() {
+        contenidoOculto.value = textarea.value;
+    });
+    function borrarTextarea() {
+        document.getElementById('textAreaExample').value = '';
+    }
+    document.getElementById('miFormulario').addEventListener('submit', function(event) {
+        event.preventDefault(); // Evitar que el formulario se envíe automáticamente
+
+        var rutaActual = window.location.href; // Obtener la ruta actual
+        var rutaComentario = rutaActual + "/comment"; // Concatenar la ruta actual con "/comentario"
+        this.action = rutaComentario; // Establecer la nueva acción del formulario
+        this.submit(); // Enviar el formulario
+    });
+</script>
+</html>
